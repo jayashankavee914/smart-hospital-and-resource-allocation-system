@@ -3,26 +3,7 @@
 #include <string.h>
 #include "hospitalData.h"
 
-//define doctor specialty
-typedef struct {
-    int specialtyID;
-    char specialtyName[100];
-    float baseConsultationFee;
-    float consultationTimePerPatient;
-    int dailyPatientCap;
-} doctorSpecialtyData;
-
-//define wards
-typedef struct {
-    int wardID;
-    char wardName[100];
-    float dailyBedRate;
-    int totalBedCapacity;
-} wardsData;
-
-int main()
-{
-
+//Specialty Data
     doctorSpecialtyData doctor[4] = {
     {1, "General Practice", 1500.00, 15, 30},
     {2, "Paediatrics",      2500.00, 20, 20},
@@ -30,6 +11,7 @@ int main()
     {4, "Neurology",        5000.00, 30, 10}
 };
 
+//Ward Data
     wardsData wards[4] = {
     {1, "General Ward",     3000.00, 20},
     {2, "Paediatrics Ward", 6000.00, 10},
@@ -37,6 +19,36 @@ int main()
     {4, "ICU",              25000.00, 5}
 };
 
-    return 0;
+//Patient Data
+    patientData patients[100];
+    int patientCount = 0;
+
+//Save Patient's Data in patients.dat
+void savePatients(void)
+{
+    FILE *file;
+    file = fopen("patients.dat", "wb");
+    if (file == NULL)
+    {
+        printf("Error opening patient file.\n");
+        return;
+    }
+    fwrite(&patientCount, sizeof(int), 1, file);
+    fwrite(patients, sizeof(patientData), patientCount, file);
+    fclose(file);
 }
 
+//Load Patient's Data from patients.dat
+void loadPatients(void)
+{
+    FILE *file;
+    file = fopen("patients.dat", "rb");
+    if (file == NULL)
+    {
+        patientCount = 0;
+        return;
+    }
+    fread(&patientCount, sizeof(int), 1, file);
+    fread(patients, sizeof(patientData), patientCount, file);
+    fclose(file);
+}

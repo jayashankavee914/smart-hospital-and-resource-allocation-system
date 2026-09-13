@@ -1,5 +1,20 @@
 # depslib dependency file v1.0
-1789107243 source:c:\users\jayashan kaveesha\desktop\smart-hospital-and-resource-allocation-system\smart-hospital-and-resource-allocation-system\main.c
+1789289987 source:c:\users\jayashan kaveesha\desktop\smart-hospital-and-resource-allocation-system\smart-hospital-and-resource-allocation-system\main.c
 	<stdio.h>
 	<stdlib.h>
+	"hospitaldata.h"
+
+1789289047 source:c:\users\jayashan kaveesha\desktop\smart-hospital-and-resource-allocation-system\smart-hospital-and-resource-allocation-system\hospitaldata.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"hospitalData.h"
+
+1789289736 source:c:\users\jayashan kaveesha\desktop\smart-hospital-and-resource-allocation-system\smart-hospital-and-resource-allocation-system\patient intake.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"hospitalData.h"
+
+1789289232 c:\users\jayashan kaveesha\desktop\smart-hospital-and-resource-allocation-system\smart-hospital-and-resource-allocation-system\hospitaldata.h
 
