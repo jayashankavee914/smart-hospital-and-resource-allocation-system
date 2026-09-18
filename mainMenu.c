@@ -3,6 +3,11 @@
 #include <string.h>
 #include "hospitalData.h"
 #include "bedOccupancy.h"
+#include "printBill.h"
+#include "patientDisplay.h"
+#include "patientSearch.h"
+
+
 
 void patientDetails(patientData *patient);
 
@@ -15,7 +20,11 @@ void mainMenu()
         printf("\n===== MENU =====\n");
         printf("1. Patient Intake\n");
         printf("2. Bed Occupancy\n");
-        printf("3. Performance Reports & Analytics\n");
+        //printf("3. Performance Reports & Analytics\n");
+        printf("3. Search Patient Details\n");
+        printf("4. Delete Patients Data\n");
+        printf("5. Display Patients Data\n");
+        printf("6. Print Bill\n");
 
         printf("Enter your choice: ");
         scanf("%d", &choice);
@@ -43,8 +52,20 @@ void mainMenu()
             bedStatusTracking(bedOccupancy, wards);
         break;
         case 3 :
+            loadPatients();
+            searchAndDisplayPatient(patients, patientCount);
         break;
-
+        case 4 :
+            loadPatients();
+            deletePatientData(patients, &patientCount);
+        break;
+        case 5 :
+            loadPatients();
+            displayPatients(patients, patientCount);
+        break;
+        case 6 :
+            loadPatients();
+            printBill(patients, patientCount);
         }
-    } while (choice != 4);
+    } while (choice != 7);
 }

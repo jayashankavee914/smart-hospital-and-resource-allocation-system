@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include "hospitalData.h"
+#include "printBill.h"
+#include "mainMenu.h"
 
 //Specialty Data
     doctorSpecialtyData doctor[4] = {
@@ -22,6 +24,7 @@
 //Patient Data
     patientData patients[100];
     int patientCount = 0;
+    int queueCount[4] = {0};
 
 //Save Patient's Data in patients.dat
 void savePatients(void)
@@ -51,4 +54,29 @@ void loadPatients(void)
     fread(&patientCount, sizeof(int), 1, file);
     fread(patients, sizeof(patientData), patientCount, file);
     fclose(file);
+}
+
+void deletePatientData(patientData patients[], int *patientCount)
+{
+    char confirm;
+
+    printf("Are you sure you want to delete ALL patient data? (Y/N): ");
+    scanf(" %c", &confirm);
+
+    if (confirm == 'Y' || confirm == 'y')
+    {
+        if (remove("patients.dat") == 0)
+        {
+            patientCount = 0;
+            printf("All patient data deleted successfully.\n");
+        }
+        else
+        {
+            printf("Error: Could not delete patient data.\n");
+        }
+    }
+    else
+    {
+        printf("Delete operation cancelled.\n");
+    }
 }

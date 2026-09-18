@@ -16,14 +16,13 @@ void displayPatients(patientData patients[], int patientCount)
     {
         printf("\nPatient %d\n", i + 1);
         printf("-----------------------------------------\n");
-
+        printf("Patient Name     : %s\n", patients[i].patientName);
         printf("Patient ID       : %s\n", patients[i].patientID);
         printf("Patient Age      : %d\n", patients[i].patientAge);
         printf("Triage Level     : %d\n", patients[i].triageLevel);
         printf("Specialty ID     : %d\n", patients[i].specialtyID);
         printf("Ward Status      : %d\n", patients[i].wardStatus);
         printf("Ward ID          : %d\n", patients[i].wardID);
-        printf("Days Admitted    : %d\n", patients[i].daysAdmitted);
     }
 
     printf("\n=========================================\n");

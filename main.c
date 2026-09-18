@@ -3,6 +3,7 @@
 #include "hospitaldata.h"
 #include "bedOccupancy.h"
 #include "mainMenu.h"
+#include "waitingTime.h"
 
 void patientDetails(patientData *patient);
 void mainMenu();
