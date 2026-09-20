@@ -4,6 +4,7 @@
 #include "hospitalData.h"
 #include "printBill.h"
 #include "mainMenu.h"
+#include "patientSearch.h"
 
 //Specialty Data
     doctorSpecialtyData doctor[4] = {
@@ -17,7 +18,7 @@
     wardsData wards[4] = {
     {1, "General Ward",     3000.00, 20},
     {2, "Paediatrics Ward", 6000.00, 10},
-    {3, "Surgical Ward",   12000.00, 8},
+    {3, "Surgical Ward",   12000.00, 10},
     {4, "ICU",              25000.00, 5}
 };
 
@@ -58,25 +59,25 @@ void loadPatients(void)
 
 void deletePatientData(patientData patients[], int *patientCount)
 {
-    char confirm;
+    char searchID[20];
+    int foundIndex;
 
-    printf("Are you sure you want to delete ALL patient data? (Y/N): ");
-    scanf(" %c", &confirm);
+    printf("Enter Patient ID to delete: ");
+    scanf("%19s", searchID);
+    foundIndex = searchPatient(patients, *patientCount, searchID);
+    if (foundIndex == -1)
+    {
+        printf("Patient not found.\n");
+        return;
+    }
 
-    if (confirm == 'Y' || confirm == 'y')
+    // Move all patients after the deleted patient one position forward
+    for (int i = foundIndex; i < *patientCount - 1; i++)
     {
-        if (remove("patients.dat") == 0)
-        {
-            patientCount = 0;
-            printf("All patient data deleted successfully.\n");
-        }
-        else
-        {
-            printf("Error: Could not delete patient data.\n");
-        }
+        patients[i] = patients[i + 1];
     }
-    else
-    {
-        printf("Delete operation cancelled.\n");
-    }
+    //Reduce patient count
+    (*patientCount)--;
+    savePatients();
+    printf("Patient %s deleted successfully.\n", searchID);
 }
