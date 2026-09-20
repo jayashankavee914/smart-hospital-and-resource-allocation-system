@@ -7,6 +7,7 @@
 #include "printBill.h"
 #include "waitingTime.h"
 #include "PatientIntake.h"
+#include "fileHandling.h"
 
 
 void printBill(patientData patients[], int patientCount)
@@ -66,6 +67,22 @@ void printBill(patientData patients[], int patientCount)
         }
     }
 
+    if (patients[foundIndex].wardStatus == 1)
+    {
+        admittedDays(&patients[foundIndex]);
+        savePatients();
+    }
+
+    if (patients[foundIndex].wardStatus == 1)
+    {
+        totalWardCost = totalWardStayCost(wards[wardIndex].dailyBedRate,
+        patients[foundIndex].daysAdmitted, patients[foundIndex].wardStatus);
+    }
+    else
+    {
+        totalWardCost = 0;
+    }
+
     //Get Base Consultation Fee
     baseFee = doctor[specialtyIndex].baseConsultationFee;
 
@@ -91,21 +108,13 @@ void printBill(patientData patients[], int patientCount)
     finalAmount = finalAmountPayable(grossTotal, discount);
 
 
-    if (patients[foundIndex].wardStatus == 1)
-    {
-        admittedDays(&patients[foundIndex]);
-        savePatients();
-    }
-
-    if (patients[foundIndex].wardStatus == 1)
-    {
-        totalWardCost = totalWardStayCost(wards[wardIndex].dailyBedRate,
-        patients[foundIndex].daysAdmitted, patients[foundIndex].wardStatus);
-    }
-    else
-    {
-        totalWardCost = 0;
-    }
+    savePatientBillingRecord(
+    patients,
+    foundIndex,
+    grossTotal,
+    discount,
+    finalAmount
+);
 
     //Print Bill
     printf("\n");
