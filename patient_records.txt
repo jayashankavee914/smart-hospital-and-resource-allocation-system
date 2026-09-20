@@ -1,0 +1,70 @@
+===============================================
+SMART HOSPITAL BILL
+Patient ID       : PAT-1001
+Patient Name     : A
+Age              : 21
+Triage Level     : 1
+Specialty ID     : 1
+Ward ID          : 1
+Days Admitted    : 6
+Gross Total      : LKR 1500.00
+Discount         : LKR 0.00
+Final Amount     : LKR 1500.00
+===============================================
+
+===============================================
+SMART HOSPITAL BILL
+Patient ID       : PAT-1002
+Patient Name     : B
+Age              : 23
+Triage Level     : 2
+Specialty ID     : 1
+Ward ID          : 1
+Days Admitted    : 3
+Gross Total      : LKR 13800.00
+Discount         : LKR 0.00
+Final Amount     : LKR 13800.00
+===============================================
+
+===============================================
+SMART HOSPITAL BILL
+Patient ID       : PAT-1003
+Patient Name     : KAMAL
+Age              : 4
+Triage Level     : 3
+Specialty ID     : 3
+Ward ID          : 3
+Days Admitted    : 5
+Gross Total      : LKR 6750.00
+Discount         : LKR 1012.50
+Final Amount     : LKR 5737.50
+===============================================
+
+===============================================
+SMART HOSPITAL BILL
+Patient ID       : PAT-1003
+Patient Name     : KAMAL
+Age              : 4
+Triage Level     : 3
+Specialty ID     : 3
+Ward ID          : 3
+Days Admitted    : 5
+Gross Total      : LKR 66750.00
+Discount         : LKR 10012.50
+Final Amount     : LKR 56737.50
+===============================================
+
+===============================================
+SMART HOSPITAL BILL
+Patient ID       : PAT-1004
+Patient Name     : Nimal Perera
+Age              : 31
+Triage Level     : 3
+Specialty ID     : 2
+Ward ID          : 2
+Days Admitted    : 5
+Gross Total      : LKR 33750.00
+Discount         : LKR 0.00
+Final Amount     : LKR 33750.00
+===============================================
+

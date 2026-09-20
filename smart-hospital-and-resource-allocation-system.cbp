@@ -31,16 +31,57 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="Patient Intake.c">
+		<Unit filename="BedOccupancy.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="BedOccupancy.h" />
+		<Unit filename="BillCalculations.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="BillCalculations.h" />
+		<Unit filename="PatientIntake.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="PatientIntake.h" />
+		<Unit filename="fileHandling.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fileHandling.h" />
 		<Unit filename="hospitalData.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="hospitalData.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
-			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="mainMenu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="mainMenu.h" />
+		<Unit filename="patientDisplay.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="patientDisplay.h" />
+		<Unit filename="patientSearch.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="patientSearch.h" />
+		<Unit filename="patientSort.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="patientSort.h" />
+		<Unit filename="performanceReports.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="performanceReports.h" />
+		<Unit filename="printBill.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="printBill.h" />
+		<Unit filename="waitingTime.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="waitingTime.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

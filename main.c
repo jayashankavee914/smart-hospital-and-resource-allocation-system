@@ -4,12 +4,16 @@
 #include "bedOccupancy.h"
 #include "mainMenu.h"
 #include "waitingTime.h"
-
-void patientDetails(patientData *patient);
-void mainMenu();
+#include "fileHandling.h"
 
 int main()
 {
-    mainMenu();
+    int bedOccupancy[4][20] = {0};
+
+    loadPatients();
+    loadBedStatus(bedOccupancy);
+
+    mainMenu(bedOccupancy);
+
     return 0;
 }
