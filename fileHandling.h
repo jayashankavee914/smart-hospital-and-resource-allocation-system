@@ -5,9 +5,6 @@
 
 void saveBedOccupiedStatus(int bedOccupancy[4][20]);
 void loadBedStatus(int bedOccupancy[4][20]);
-
-void savePatientBillingRecord(patientData patients[], int foundIndex,
-                              float grossTotal, float discount,
-                              float finalAmount);
+void savePatientBillingRecord(patientData patients[], int foundIndex, float grossTotal, float discount, float finalAmount);
 
 #endif
